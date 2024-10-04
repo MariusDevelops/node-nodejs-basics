@@ -1,12 +1,5 @@
 const parseEnv = () => {
-    const env = {
-        RSS_host: "app.rs.school",
-        APP_host: "db.app.com",
-        RSS_port: "7070",
-        APP_port: "3030",
-        RSS_user: "user",
-        APP_user: "admin",
-    };
+    const env = process.env;
 
     const envVariables = [];
 
