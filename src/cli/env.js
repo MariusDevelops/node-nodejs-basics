@@ -1,6 +1,5 @@
 const parseEnv = () => {
     const env = process.env;
-
     const envVariables = [];
 
     Object.keys(env).forEach((key) => {

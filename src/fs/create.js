@@ -1,4 +1,4 @@
-import * as fs from "node:fs/promises";
+import { access, writeFile } from "node:fs/promises";
 
 const create = async () => {
     const path = "src/fs/files/fresh.txt";
@@ -6,11 +6,11 @@ const create = async () => {
     const errorMessage = "FS operation failed";
 
     try {
-        await fs.access(path);
+        await access(path);
         throw new Error(errorMessage);
     } catch (error) {
         if (error.code === "ENOENT") {
-            await fs.writeFile(path, content);
+            await writeFile(path, content);
         } else {
             throw new Error(errorMessage);
         }
